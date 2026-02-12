@@ -16,7 +16,7 @@ if os.path.exists("logo.png"):
     with col2:
         st.image(logo, width=300)
 
-st.title("logos.png" LED Therapy Pro Calculator")
+st.title("LED Therapy Pro Calculator")
 st.markdown("""
 This advanced calculator helps clinicians design **photobiomodulation (LED) therapy programs**.
 It supports preset wavelengths, pulsed/continuous light, and calculates treatment time and total energy.
