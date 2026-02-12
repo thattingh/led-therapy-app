@@ -1,6 +1,20 @@
 import streamlit as st
+from PIL import Image
+import os
 
-st.set_page_config(page_title="LED Therapy Pro Calculator", page_icon="💡", layout="centered")
+# Set page config FIRST - must be before any other st command
+st.set_page_config(
+    page_title="LED Therapy Pro",
+    page_icon="💡",
+    layout="wide"
+)
+
+# Logo display - only if file exists
+if os.path.exists("logo.png"):
+    logo = Image.open("logo.png")
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+        st.image(logo, width=300)
 
 st.title("💡 LED Therapy Pro Calculator")
 st.markdown("""
