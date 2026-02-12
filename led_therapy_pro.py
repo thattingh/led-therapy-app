@@ -17,7 +17,7 @@ if os.path.exists("logo.png"):
     with col2:
         st.title("LED Therapy Pro Calculator")
 else:
-    st.title("💡 LED Therapy Pro Calculator")
+    st.title("logos.png LED Therapy Pro Calculator")
 
 st.markdown("""
 This advanced calculator helps clinicians design **photobiomodulation (LED) therapy programs**.
