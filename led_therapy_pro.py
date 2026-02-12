@@ -5,17 +5,20 @@ import os
 # Set page config FIRST - must be before any other st command
 st.set_page_config(
     page_title="LED Therapy Pro",
-    page_icon="logo.png",
+    page_icon="💡",
     layout="wide"
 )
 
-# Logo display - only if file exists
+# Display logo with title side by side
 if os.path.exists("logo.png"):
-    col1, col2 = st.columns([1, 3])
-with col1:
-    st.image("your-image-filename.png", width=100)
-with col2:
-    st.title("LED Therapy Pro Calculator")
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        st.image("logo.png", width=120)
+    with col2:
+        st.title("LED Therapy Pro Calculator")
+else:
+    st.title("💡 LED Therapy Pro Calculator")
+
 st.markdown("""
 This advanced calculator helps clinicians design **photobiomodulation (LED) therapy programs**.
 It supports preset wavelengths, pulsed/continuous light, and calculates treatment time and total energy.
