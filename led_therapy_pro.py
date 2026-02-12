@@ -5,7 +5,7 @@ import os
 # Set page config FIRST - must be before any other st command
 st.set_page_config(
     page_title="LED Therapy Pro",
-    page_icon="💡",
+    page_icon="logo.png",
     layout="wide"
 )
 
