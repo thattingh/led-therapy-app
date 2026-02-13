@@ -17,5 +17,4 @@ st.set_page_config(
 # ---------------------------
 if os.path.exists("logo.png"):
     with open("logo.png", "rb") as img_file:
-        encoded = base64.b64encode(i)
-
+        encoded = base64.b64encode(img_file.read()).decode()
