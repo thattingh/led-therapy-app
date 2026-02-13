@@ -25,7 +25,7 @@ if os.path.exists("logo.png"):
         """,
         unsafe_allow_html=True
     )
-    st.image("logo.png", width=500)  # ⬅ Increase size here
+    st.image("logo.png", use_container_width=True) # ⬅ Increase size here
     st.markdown("</div>", unsafe_allow_html=True)
 
 
