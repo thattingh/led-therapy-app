@@ -15,15 +15,23 @@ st.set_page_config(
 # HEADER SECTION
 # -------------------------------------------------
 
-# Large centered logo at top
+# -------------------------------------------------
+# LARGE CENTERED LOGO
+# -------------------------------------------------
 if os.path.exists("logo.png"):
-    st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-    st.image("logo.png", width=220)
+    st.markdown(
+        """
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+        """,
+        unsafe_allow_html=True
+    )
+    st.image("logo.png", width=400)  # ⬅ Increase size here
     st.markdown("</div>", unsafe_allow_html=True)
 
+
 # Small inline logo + title
-if os.path.exists("logo.png"):
-    with open("logo.png", "rb") as img_file:
+if os.path.exists("logos.png"):
+    with open("logos.png", "rb") as img_file:
         encoded = base64.b64encode(img_file.read()).decode()
 
     st.markdown(
