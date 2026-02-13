@@ -21,7 +21,7 @@ st.set_page_config(
 if os.path.exists("logo.png"):
     st.markdown(
         """
-        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
         """,
         unsafe_allow_html=True
     )
@@ -36,8 +36,8 @@ if os.path.exists("logos.png"):
 
     st.markdown(
         f"""
-        <div style="display: flex; align-items: center; margin-top: 20px; margin-bottom: 10px;">
-            <img src="data:image/png;base64,{encoded}" width="90" style="margin-right: 20px;">
+        <div style="display: flex; align-items: center; margin-top: 10px; margin-bottom: 10px;">
+            <img src="data:image/png;base64,{encoded}" width="100" style="margin-right: 10px;">
             <h1 style="margin: 0;">LED Therapy Pro Calculator</h1>
         </div>
         """,
