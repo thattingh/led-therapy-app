@@ -1,23 +1,26 @@
-import streamlit as st
-from PIL import Image
-import os
 import base64
+import os
 
-# ---------------------------
-# Page Config (MUST BE FIRST)
-# ---------------------------
-st.set_page_config(
-    page_title="LED Therapy Pro",
-    page_icon="logo.png",
-    layout="wide"
-)
-
-# ---------------------------
-# Header with Inline Logo
-# ---------------------------
+# ---------- LARGE LOGO ABOVE ----------
 if os.path.exists("logo.png"):
-    with open("logo.png", "rb") as img_file:
+    st.image("logo.png", width=220)
+
+# ---------- INLINE SMALL LOGO + TITLE ----------
+if os.path.exists("logos.png"):
+    with open("logos.png", "rb") as img_file:
         encoded = base64.b64encode(img_file.read()).decode()
+
+    st.markdown(
+        f"""
+        <div style="display: flex; align-items: center; margin-top: 20px; margin-bottom: 10px;">
+            <img src="data:image/png;base64,{encoded}" width="50" style="margin-right: 15px;">
+            <h1 style="margin: 0;">LED Therapy Pro Calculator</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+else:
+    st.title("LED Therapy Pro Calculator")
 
     st.markdown(
         f"""
@@ -67,6 +70,21 @@ preset_wavelengths = {
 }
 
 wavelength_choice = st.selectbox("Select Wavelength", list(preset_wavelengths.keys()))
+# ---------------------------
+# Safety Warnings for 405nm
+# ---------------------------
+if wavelength == 405:
+    st.warning("""
+    ⚠️ **405 nm Antimicrobial Safety Notice**
+
+    • Protective eyewear is REQUIRED  
+    • Avoid direct retinal exposure  
+    • Primarily for surface-level antimicrobial use  
+    • Higher oxidative stress potential than red/NIR wavelengths  
+    • Do not use over thyroid or directly over eyes  
+
+    Recommended dose range (surface use): 1–10 J/cm²
+    """)
 
 if wavelength_choice == "Custom":
     wavelength = st.number_input("Custom Wavelength (nm)", min_value=400, max_value=1000, value=660)
@@ -115,4 +133,7 @@ if st.button("Calculate"):
 # ---------------------------
 st.markdown("---")
 st.caption("Developed for clinical LED photobiomodulation therapy guidance.")
+
+
+
 
