@@ -15,29 +15,32 @@ st.set_page_config(
 # HEADER SECTION
 # -------------------------------------------------
 
-# -------------------------------------------------
-# LARGE CENTERED LOGO
-# -------------------------------------------------
+# LARGE CENTERED MAIN LOGO (logo.png)
 if os.path.exists("logo.png"):
     st.markdown(
         """
-        <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+        <div style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
         """,
         unsafe_allow_html=True
     )
-    st.image("logo.png", use_container_width=True) # ⬅ Increase size here
+    st.image("logo.png", width=550)
     st.markdown("</div>", unsafe_allow_html=True)
 
-
-# Small inline logo + title
+# SMALL ICON + TITLE (logos.png)
 if os.path.exists("logos.png"):
     with open("logos.png", "rb") as img_file:
         encoded = base64.b64encode(img_file.read()).decode()
 
     st.markdown(
         f"""
-        <div style="display: flex; align-items: center; margin-top: 10px; margin-bottom: 10px;">
-            <img src="data:image/png;base64,{encoded}" width="100" style="margin-right: 10px;">
+        <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -10px;
+            margin-bottom: 5px;
+        ">
+            <img src="data:image/png;base64,{encoded}" width="70" style="margin-right: 12px;">
             <h1 style="margin: 0;">LED Therapy Pro Calculator</h1>
         </div>
         """,
